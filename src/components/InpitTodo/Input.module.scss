@@ -1,0 +1,76 @@
+.Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Input {
+  height: 2.5rem;
+  width: 75vw;
+  border: none;
+  outline: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 0 5px;
+  font-size: 1.2rem;
+  &::placeholder {
+    font-size: 1.2rem;
+    color: var(--color-gray);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--color-green);
+  }
+  &Btn {
+    height: 2.5rem;
+    padding: 5px 10px;
+    color: var(--color-white);
+    border: none;
+    outline: none;
+    background: var(--color-green);
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: color 0.5s ease, background 0.5s ease;
+    -webkit-transition: color 0.5s ease, background 0.5s ease;
+    -moz-transition: color 0.5s ease, background 0.5s ease;
+    -ms-transition: color 0.5s ease, background 0.5s ease;
+    -o-transition: color 0.5s ease, background 0.5s ease;
+    &Disabled {
+      height: 2.5rem;
+      padding: 5px 10px;
+      color: var(--color-white);
+      border: none;
+      outline: none;
+      font-size: 1.2rem;
+      background: var(--btn-disabled);
+      cursor: not-allowed;
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    &:hover {
+      color: var(--color-green);
+      background: var(--color-white);
+    }
+    &:focus-visible {
+      outline: 2px solid var(--color-blue);
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .Input {
+    width: 75vw;
+    height: 2rem;
+    &Btn {
+      font-size: 0.5rem;
+      height: 2rem;
+      padding: 5px;
+      &Disabled {
+        font-size: 0.5rem;
+        height: 2rem;
+   
+      }
+    }
+  }
+}

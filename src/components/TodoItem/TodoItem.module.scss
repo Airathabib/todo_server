@@ -1,0 +1,222 @@
+.InputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 40vw;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-blue);
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  cursor: pointer;
+}
+.Info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+.InputTask {
+  font-size: 1.5rem;
+  color: var(--color-black);
+  user-select: none;
+  &Done {
+    font-size: 1.5rem;
+    color: var(--color-red);
+    text-decoration: line-through;
+    user-select: none;
+  }
+}
+
+.InputTaskEdit {
+  font-size: 1.5rem;
+  width: 90%;
+  color: var(--color-black);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid var(--color-blue);
+  cursor: pointer;
+}
+
+.InputStatusWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.InputBtn {
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: var(--color-chocolate);
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: color 0.5s ease, background 0.5s ease;
+  -webkit-transition: color 0.5s ease, background 0.5s ease;
+  -moz-transition: color 0.5s ease, background 0.5s ease;
+  -ms-transition: color 0.5s ease, background 0.5s ease;
+  -o-transition: color 0.5s ease, background 0.5s ease;
+  &:hover {
+    color: var(--color-brown);
+    background: var(--color-white);
+  }
+  &:disabled {
+    color: var(--btn-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.InputTaskBtnEdit {
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: var(--color-blue);
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: color 0.5s ease, background 0.5s ease;
+  -webkit-transition: color 0.5s ease, background 0.5s ease;
+  -moz-transition: color 0.5s ease, background 0.5s ease;
+  -ms-transition: color 0.5s ease, background 0.5s ease;
+  -o-transition: color 0.5s ease, background 0.5s ease;
+  &:hover {
+    color: var(--color-blue-hover);
+    background: var(--color-white);
+  }
+}
+
+.InputTaskBtnSave {
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  color: var(--color-green);
+  border: none;
+  background: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: color 0.5s ease, background 0.5s ease;
+  -webkit-transition: color 0.5s ease, background 0.5s ease;
+  -moz-transition: color 0.5s ease, background 0.5s ease;
+  -ms-transition: color 0.5s ease, background 0.5s ease;
+  -o-transition: color 0.5s ease, background 0.5s ease;
+  &:hover {
+    color: var(--color-green-hover);
+    background: var(--color-white);
+  }
+}
+
+.InputChecked {
+  &:focus-visible {
+    outline: 2px solid rgb(14, 40, 240);
+  }
+}
+input:checked + p {
+  text-decoration: line-through;
+}
+
+// checkbox
+//
+
+.CheckboxWrapper .InputLabel {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.CheckboxWrapper input.InputChecked {
+  -webkit-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  background: #fff;
+  font-size: 1.8em;
+  border-radius: 0.125em;
+  display: inline-block;
+  border: var(--borderWidth) solid var(--borderColor);
+  width: 1em;
+  height: 1em;
+  position: relative;
+}
+.CheckboxWrapper input.InputChecked:before,
+.CheckboxWrapper input.InputChecked:after {
+  content: '';
+  position: absolute;
+  background: var(--borderColor);
+  width: calc(var(--borderWidth) * 3);
+  height: var(--borderWidth);
+  top: 50%;
+  left: 10%;
+  transform-origin: left center;
+}
+.CheckboxWrapper input.InputChecked:before {
+  transform: rotate(45deg)
+    translate(calc(var(--borderWidth) / -2), calc(var(--borderWidth) / -2))
+    scaleX(0);
+  transition: transform 200ms ease-in 200ms;
+}
+.CheckboxWrapper input.InputChecked:after {
+  width: calc(var(--borderWidth) * 5);
+  transform: rotate(-45deg) translateY(calc(var(--borderWidth) * 2)) scaleX(0);
+  transform-origin: left center;
+  transition: transform 200ms ease-in;
+}
+.CheckboxWrapper input.InputChecked:checked:before {
+  transform: rotate(45deg)
+    translate(calc(var(--borderWidth) / -2), calc(var(--borderWidth) / -2))
+    scaleX(1);
+  transition: transform 200ms ease-in;
+}
+.CheckboxWrapper input.InputChecked:checked:after {
+  width: calc(var(--borderWidth) * 5);
+  transform: rotate(-45deg) translateY(calc(var(--borderWidth) * 2)) scaleX(1);
+  transition: transform 200ms ease-out 200ms;
+}
+.CheckboxWrapper input.InputChecked:focus {
+  outline: calc(var(--borderWidth) / 2) dotted rgba(0, 0, 0, 0.25);
+}
+.InputChecked:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media screen and (max-width: 989px) {
+  .InputWrapper {
+    width: 75vw;
+  }
+
+  .Info {
+    flex-wrap: wrap;
+  }
+  .InputTask {
+    font-size: 1rem;
+    &Done {
+      font-size: 1rem;
+    }
+  }
+  .InputStatus {
+    display: none;
+  }
+  .InputStatusCheck {
+    display: none;
+  }
+  .InputBtn {
+    font-size: 0.8rem;
+  }
+}
