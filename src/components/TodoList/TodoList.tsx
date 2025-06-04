@@ -11,11 +11,15 @@ import { Todo } from '../../interfaces/interface';
  *
  * @returns {JSX.Element} JSX-элемент компонента TodoList.
  */
-const TodoList: React.FC<{ todos: Todo[] }> = ({ todos }) => {
+const TodoList: React.FC<{ todos: Todo[] }> = ({
+  todos,
+}: {
+  todos: Todo[];
+}) => {
   return (
-    <div className={styles.TodoList}>
+    <div className={styles.TodoList}  data-testid='TodoList'>
       {todos.map((todo) => (
-        <TodoItem key={todo.id} {...todo} />
+        <TodoItem key={todo.id} {...todo}  data-testid='TodoItem'/>
       ))}
     </div>
   );

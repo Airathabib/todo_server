@@ -15,7 +15,8 @@ import './App.css';
  * информацию о количестве задач и выполненных задачах, а также список задач.
  * @returns {React.ReactElement} JSX компонент.
  */
-function App() {
+
+function App(): React.ReactElement {
   const [title, setTitle] = useState<string>('');
   const [done, setDone] = useState<string>('');
 
@@ -79,9 +80,8 @@ function App() {
   }
 
   return (
-    <div className='container'>
+    <div className='container' data-testid='App'>
       <h1 className='title'>Список задач</h1>
-			
       <InputTodo
         handleSubmit={addTask}
         title={title}
@@ -111,7 +111,7 @@ function App() {
         </div>
         {loading && <h2 className='loader'>Loading...</h2>}
         {error && <h2 className='error'>{error}</h2>}
-        <TodoList todos={copyTasks} />
+        <TodoList todos={copyTasks} data-testid='TodoList' />
       </>{' '}
     </div>
   );

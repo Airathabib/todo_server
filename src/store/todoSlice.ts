@@ -190,7 +190,7 @@ const todoSlice = createSlice({
      * @param {PayloadAction<TodoProps>} action - Действие, содержащее новую задачу для добавления,
      * представлено как объект TodoProps.
      */
-    addTask: (state, action: PayloadAction<TodoProps>) => {
+    addTask: (state: StateTodo, action: PayloadAction<TodoProps>) => {
       state.todos.push(action.payload as WritableDraft<Todo>);
     },
 
@@ -283,4 +283,4 @@ export default todoSlice.reducer;
  */
 
 //
-export const selectTodos = (state: RootState) => state.todos.todos;
+export const selectTodos = (state: RootState): Todo[] => state.todos.todos;
