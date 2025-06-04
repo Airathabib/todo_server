@@ -12,3 +12,5 @@
 2. npm install
 <!-- запустите приложение командой npm run dev -->
 3. npm run dev
+<!-- запуск тестов командой npm run test -->
+4. npm run test
